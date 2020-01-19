@@ -80,6 +80,7 @@ class UserMap:
             except IndexError:
                 raise IndexError("Article not in the Graph!")
         elif current_article_url:
+            print(urls)
             url_idx = urls.index(current_article_url)
             for n in self.G.nodes:
                 if int(self.G.nodes[n]['url']) == int(url_idx):

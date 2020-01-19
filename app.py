@@ -22,11 +22,8 @@ def parse_request():
 
     u.update_map(format_mapping_dicts(nodes=load_json("./training_info/info.json")))
 
-    print(current_article['start_url'])
-    print(current_article['start_url'][0])
-
-    next_article = u.recommend_article(current_article_url=current_article['start_url'],
-                                       jump_distance=current_article['jumpdist'])
+    next_article = u.recommend_article(current_article_url=current_article['start_url'][0],
+                                       jump_distance=current_article['jumpdist'][0])
 
     return_article = {'next_url': next_article}
 

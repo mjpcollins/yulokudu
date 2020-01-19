@@ -1,13 +1,18 @@
 from flask import Flask, request
-import json
+from flask_cors import CORS, cross_origin
 
 from utils.map_algos import UserMap
 from utils.t import load_json, format_mapping_dicts
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'yup'
+app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/": {"origins": "http://0.0.0.0:5000"}})
+CORS(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
+@cross_origin(origin='0.0.0.0',headers=['Content- Type','Authorization'])
 def parse_request():
 
     # TODO: Place inside a function
@@ -31,7 +36,7 @@ def parse_request():
     u = UserMap(user_id)
     u.update_map(format_mapping_dicts(nodes=load_json("./training_info/info.json")))
     next_article = u.recommend_article(current_article_url=current_article['start_url'][0],
-                                       jump_distance=current_article['jumpdist'][0])
+                                       jump_distance=float(current_article['jumpdist'][0]))
     return_article = {'next_url': next_article}
 
     return return_article

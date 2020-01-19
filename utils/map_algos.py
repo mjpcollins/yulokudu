@@ -36,9 +36,9 @@ class UserMap:
                         if n1 != n2:
                             if k in self.G.nodes[n2]['keywords']:
                                 if self.G.has_edge(n1, n2):
-                                    w = self.G[n1][n2]['weight']
+                                    w = (1 / self.G[n1][n2]['weight']) + 1
                                     self.G.remove_edge(n1, n2)
-                                    self.G.add_edge(n1, n2, weight=w+1)
+                                    self.G.add_edge(n1, n2, weight=1/w)
                                 else:
                                     self.G.add_edge(n1, n2, weight=1)
 
@@ -55,18 +55,21 @@ class UserMap:
     def explore_neighbourhood(self):
         # Very computationally heavy - replace with better algo when in product
         opts = list()
-        for n in self.G.nodes:
-            try:
-                for path in nx.algorithms.simple_paths.shortest_simple_paths(self.G, self.current_node, n):
-                    if n != self.current_node:
-                        shortest_path = path
-                        break
-            except nx.exception.NetworkXNoPath:
-                # Assign arbitrary high score
-                shortest_path = [200]
-            opts.append({"node": str(n), "distance": sum(shortest_path)})
-        opts.sort(key=lambda k: k['distance'])
-        return opts
+        # len_path = dict(nx.all_pairs_dijkstra(self.G, weight='weight'))
+
+        # for n in self.G.nodes:
+        #     if (self.current_node != n) and (nx.has_path(self.G, self.current_node, n)):
+        #         print(n)
+        #         m = min(path for path in nx.all_simple_paths(self.G, self.current_node, n))
+        #         print(m)
+        #     elif self.current_node != n:
+        #         pass
+        #     else:
+        #         m = 1
+            # opts.append({"node": str(n), "distance": sum(shortest_path)})
+        # opts.sort(key=lambda k: k['distance'])
+
+        return [{"node": 1, "distance": 3}, {"node": 3, "distance": 5}]
 
     def recommend_article(self, current_article_url=None, current_article_name=None, jump_distance=0.5):
 
@@ -88,11 +91,14 @@ class UserMap:
 
         # Think about paths around the network
         neighbourhood = self.explore_neighbourhood()
+
         jump_to_node = int(len(neighbourhood) * jump_distance)
         if jump_to_node >= len(neighbourhood):
-            n = self.G.nodes[jump_to_node - 1]
+            nd = neighbourhood[jump_to_node - 1]["node"]
         else:
-            n = self.G.nodes[jump_to_node]
+            nd = neighbourhood[jump_to_node]["node"]
+
+        n = self.G.nodes[nd]
 
         return self.urls[n['url']]
 

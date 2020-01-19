@@ -1,8 +1,9 @@
 from utils.map_algos import UserMap
 from utils.t import load_json, format_mapping_dicts
+import matplotlib.pyplot as plt
 
 
-def init_map(user_id, init_articles):
+def init_map(user_id, init_articles, show_graph=False):
     u = UserMap(user_id)
 
     u.update_map(init_articles)
@@ -10,7 +11,9 @@ def init_map(user_id, init_articles):
     url = "https://www.msn.com/en-us/autos/news/tesla-selling-broken-glass-cybertruck-t-shirts-because-of-course-it-is/ar-BBYWJBI"
     a = "article2"
 
-    u.draw()
+    if show_graph:
+        u.draw()
+        plt.show()
 
     d = u.recommend_article(current_article_url=url)
 

@@ -13,5 +13,7 @@ print("send")
 
 res = requests.get(url, data)
 
+print(res)
+
 print(res.json())
 

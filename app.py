@@ -11,6 +11,8 @@ app = Flask(__name__)
 def parse_request():
     current_article = dict(request.values)
 
+    print(current_article)
+
     if "jumpdist" not in current_article:
         current_article["jumpdist"] = 0.5
 

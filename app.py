@@ -13,7 +13,7 @@ def parse_request():
     current_article = dict(request.args)
 
     if "jumpdist" not in current_article:
-        current_article["jumpdist"] = 0.5
+        current_article["jumpdist"] = [0.5]
 
     # TODO: Include user ID in final product
     user_id = "jeff100"

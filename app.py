@@ -9,8 +9,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
-    current_article = dict(request.values)
 
+    current_article = dict(request.values)
+    print(current_article)
+
+    current_article = dict(request.data)
     print(current_article)
 
     if "jumpdist" not in current_article:

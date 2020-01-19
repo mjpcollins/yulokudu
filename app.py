@@ -6,7 +6,7 @@ from utils.t import load_json, format_mapping_dicts
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
 def parse_request():
 
     # TODO: Place inside a function

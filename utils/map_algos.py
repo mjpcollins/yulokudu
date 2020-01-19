@@ -9,6 +9,10 @@ class UserMap:
     def __init__(self, user_id):
         self.user_id = user_id
         self.G = nx.Graph()
+        self.current_node = None
+        self.ns = load_json("./training_info/nodes.json")['content']
+        self.urls = load_json("./training_info/urls.json")['content']
+
         # self.user_map_reference = # TODO: Redis key?
 
     def __str__(self):
@@ -38,66 +42,43 @@ class UserMap:
                                 else:
                                     self.G.add_edge(n1, n2, weight=1)
 
-    def discover_neighbourhood(self, node):
+    def discover_neighbourhood(self):
         """
-        Take a node and discover articles that art < 3 links away
+        Take a node and discover articles that are nearby, and the weights to them
 
-        Calculate the weighted distance to those articles
-
-        Penalty for being further away.
         :param node:
         :return:
         """
 
-        print(node)
-        first_neighbours = [nod for nod in self.G.neighbors(node)]
-        for neighbour in first_neighbours:
+        return {e[1]: self.G[e[0]][e[1]]['weight'] for e in self.G.edges(self.current_node)}
 
-            print("----", neighbour, self.G[node][neighbour])
-            for n in self.G.neighbors(neighbour):
-                if (n != node) and (n not in first_neighbours):
-                    print("----", "----", n, self.G[neighbour][n])
-
-        # c = nx.algorithms.resistance_distance(self.G, node, 4)
-        # for ch in c:
-        #     print(ch)
-
-        closest = {ns: self.G[node][ns]['weight'] for ns in self.G.neighbors(node)}
-
-        return closest
+    def explore_neighbourhood(self):
+        nodes_weights = self.discover_neighbourhood()
 
     def recommend_article(self, current_article_url=None, current_article_name=None, jump_distance=0.5):
 
-        # Load infomation from file
-        ns = load_json("./training_info/nodes.json")['content']
-        urls = load_json("./training_info/urls.json")['content']
-
         # Find node from input
-        node_idx = False
         if current_article_name:
             try:
-                node_idx = ns.index(current_article_name)
+                self.current_node = self.ns.index(current_article_name)
             except IndexError:
                 raise IndexError("Article not in the Graph!")
         elif current_article_url:
-            url_idx = urls.index(current_article_url)
+            url_idx = self.urls.index(current_article_url)
             for n in self.G.nodes:
                 if int(self.G.nodes[n]['url']) == int(url_idx):
-                    node_idx = int(n)
-            if not node_idx:
+                    self.current_node = int(n)
+            if not self.current_node:
                 raise IndexError("URL not in the Graph!")
         else:
             raise ValueError("No information on the current article given!")
 
-        # Find next node
-
-        neighs = self.discover_neighbourhood(node_idx)
-
+        # Find next closest node
+        neighs = self.discover_neighbourhood()
         closest = max(neighs, key=neighs.get)
-
         n = self.G.nodes[closest]
 
-        return urls[n['url']]
+        return self.urls[n['url']]
 
 
 def network_investigation():

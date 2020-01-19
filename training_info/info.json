@@ -1,0 +1,43 @@
+{
+	"article1": {
+		"url": " https://www.theguardian.com/us-news/2020/jan/18/donald-trump-impeachment-news-today-alan-dershowitz",
+		"keywords": ["Trump", "impeachment", "Dershowitz", "senate", "Fox News", "Lev Parnas", "Republican", "CNN", "election", "court"]
+	},
+	"article2": {
+		"url": " https://www.businessinsider.com/peter-thiel-facebook-trump-biography-2018-2?r=US&IR=T",
+		"keywords": ["Peter Thiel", "Republican", "Trump", "Silicon Valley", "Google", "Artificial Intelligence", "Patriotism", "Elon Musk", "PayPal", "Venture Capital"]
+	},
+	"article3": {
+		"url": "https://www.msn.com/en-us/autos/news/tesla-selling-broken-glass-cybertruck-t-shirts-because-of-course-it-is/ar-BBYWJBI",
+		"keywords": ["Tesla", "Elon Musk", "Broken Glass", "Tshirt", "Money", "Car", "Bulletproof", "China", "PayPal", "Venture Capital"]
+	},
+	"article4": {
+		"url": " https://www.readersdigest.ca/cars/classics-sports-cars/5-popular-myths-about-smart-cars-busted/",
+		"keywords": ["Smart Car", "SUV", "Mercedes-Benz", "Germany", "Prius", "Chevy Vault", "Car", "Mini-car", "hybrid", "Wut"]
+	},
+	"article5": {
+		"url": " https://www.washingtonpost.com/politics/trump-privately-detailed-the-soleimani-airstrike-to-donors-at-mar-a-lago-fundraiser/2020/01/18/ab0c2414-3a03-11ea-bb7b-265f4554af6d_story.html",
+		"keywords": ["Trump", "Iran", "Soleimani", "Airstrikes", "miilitary", "Iraq", "Barack Obama", "Industry", "court", "hep"]
+	},
+	"article6": {
+		"url": "https://www.ben-evans.com/benedictevans/2019/9/6/face-recognition",
+		"keywords": ["Face recognition", "artificial intelligence", "data", "police", "ethics", "regulation", "whitelist", "Uyghurs", "court", "civil liberties", "scan"]
+	},
+	"article7": {
+		"url": "https://theconversation.com/uk-election-2019-dirty-tricks-wrong-footing-a-media-that-now-faces-a-fight-to-remain-relevant-128326",
+		"keywords": ["Democracy", "election", "Boris Johnson", "politicians", "broadcasters", "diversity", "corporate culture", "trouble", "labour", "fake news"]
+	},
+	"article8": {
+		"url": "https://www.nytimes.com/2020/01/17/technology/antitrust-hearing-boulder-colorado.html",
+		"keywords": ["Tech", "company", "lawmakers", "competition", "misinformation", "republicans", "democrats", "start-ups", "competition", "politicians"]
+	},
+	"article9": {
+		"url": "https://www.independent.co.uk/life-style/motoring/cars-accelerating-modern-world-victoria-and-albert-museum-london-a9210731.html",
+		"keywords": ["Exhibition", "cars", "design", "ford", "police", "accident", "modern", "history", "entertainment", "V&A"]
+	},
+	"article10": {
+		"url": "https://www.forbes.com/sites/roysmythe/2014/09/22/delivering-health-care-by-drone/#6d8dcdb74917",
+		"keywords": ["Hannah Arendt", "health", "high tech", "suffering", "desensitization", "providers", "co-founder", "relationships", "wage", "home"]
+
+	}
+}

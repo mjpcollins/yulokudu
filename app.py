@@ -10,19 +10,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
 
-    print(request)
-
-    current_article = dict(request.form)
-    print("form", current_article)
-
     current_article = dict(request.args)
-    print("args", current_article)
-
-    current_article = dict(request.values)
-    print("values", current_article)
-
-    current_article = dict(request.data)
-    print("data", current_article)
 
     if "jumpdist" not in current_article:
         current_article["jumpdist"] = 0.5

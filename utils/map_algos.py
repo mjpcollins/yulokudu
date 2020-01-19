@@ -12,7 +12,7 @@ class UserMap:
         # self.user_map_reference = # TODO: Redis key?
 
     def __str__(self):
-        return f"An article map for {self.user_id} with {self.nodes} node(s)"
+        return "An article map for {uid} with {n} node(s)".format(uid=self.user_id, n=self.nodes)
 
     def get_nodes(self):
         return self.G.nodes

@@ -1,25 +1,18 @@
-from flask import Flask, request
-from flask_cors import CORS, cross_origin
+from flask import Flask, request, jsonify
 
 from utils.map_algos import UserMap
 from utils.t import load_json, format_mapping_dicts
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yup'
-app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app, resources={r"/": {"origins": "http://0.0.0.0:5000"}})
-CORS(app)
 
 
 @app.route('/', methods=['GET', 'POST'])
-@cross_origin(origin='0.0.0.0',headers=['Content- Type','Authorization'])
 def parse_request():
 
     # TODO: Place inside a function
     print("Request received: {r}".format(r=request))
     current_article = dict(request.args)
     print("Pre process current_article: {c}".format(c=current_article))
-    print(current_article)
     if "jumpdist" not in current_article:
         current_article["jumpdist"] = [0.5]
     # Standardise format
@@ -39,7 +32,10 @@ def parse_request():
                                        jump_distance=float(current_article['jumpdist'][0]))
     return_article = {'next_url': next_article}
 
-    return return_article
+    response = jsonify(return_article)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
 
 
 if __name__ == '__main__':

@@ -55,21 +55,28 @@ class UserMap:
     def explore_neighbourhood(self):
         # Very computationally heavy - replace with better algo when in product
         opts = list()
-        # len_path = dict(nx.all_pairs_dijkstra(self.G, weight='weight'))
+        for n in self.G.nodes:
+            if (self.current_node != n) and (nx.has_path(self.G, self.current_node, n)):
+                p = min(path for path in nx.all_simple_paths(self.G, self.current_node, n))
+            elif self.current_node != n:
+                continue
+            else:
+                p = []
+            d = {"node": int(n),
+                 "distance": -1}
+            for idx in range(len(p)):
+                if idx < (len(p) - 1):
+                    d["distance"] = d["distance"] + self.G[p[idx]][p[idx + 1]]["weight"]
 
-        # for n in self.G.nodes:
-        #     if (self.current_node != n) and (nx.has_path(self.G, self.current_node, n)):
-        #         print(n)
-        #         m = min(path for path in nx.all_simple_paths(self.G, self.current_node, n))
-        #         print(m)
-        #     elif self.current_node != n:
-        #         pass
-        #     else:
-        #         m = 1
-            # opts.append({"node": str(n), "distance": sum(shortest_path)})
-        # opts.sort(key=lambda k: k['distance'])
+            # Arbitrary large number
+            if d["distance"] == -1:
+                d["distance"] = 200
 
-        return [{"node": 1, "distance": 3}, {"node": 3, "distance": 5}]
+            opts.append(d)
+
+        opts.sort(key=lambda k: k['distance'])
+
+        return opts
 
     def recommend_article(self, current_article_url=None, current_article_name=None, jump_distance=0.5):
 

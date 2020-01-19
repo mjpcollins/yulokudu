@@ -96,6 +96,9 @@ class UserMap:
 
         return self.urls[n['url']]
 
+    def draw(self):
+        nx.draw_networkx(self.G)
+
 
 def network_investigation():
 

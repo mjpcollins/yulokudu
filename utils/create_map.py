@@ -10,6 +10,8 @@ def init_map(user_id, init_articles):
     url = "https://www.msn.com/en-us/autos/news/tesla-selling-broken-glass-cybertruck-t-shirts-because-of-course-it-is/ar-BBYWJBI"
     a = "article2"
 
+    u.draw()
+
     d = u.recommend_article(current_article_url=url)
 
     print(d)

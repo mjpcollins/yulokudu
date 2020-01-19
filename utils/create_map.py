@@ -3,7 +3,7 @@ from utils.t import load_json, format_mapping_dicts
 import matplotlib.pyplot as plt
 
 
-def init_map(user_id, init_articles, show_graph=False):
+def init_map(user_id, init_articles, show_graph=True):
     u = UserMap(user_id)
 
     u.update_map(init_articles)

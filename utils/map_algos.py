@@ -110,7 +110,7 @@ class UserMap:
         return self.urls[n['url']]
 
     def draw(self):
-        nx.draw_networkx(self.G)
+        nx.draw_networkx(self.G, node_color="#C624FF")
 
 
 def network_investigation():

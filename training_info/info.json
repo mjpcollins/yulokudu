@@ -38,6 +38,60 @@
 	"article10": {
 		"url": "https://www.forbes.com/sites/roysmythe/2014/09/22/delivering-health-care-by-drone/#6d8dcdb74917",
 		"keywords": ["Hannah Arendt", "health", "high tech", "suffering", "desensitization", "providers", "co-founder", "relationships", "wage", "home"]
+	},
 
+	"article18": {
+		"url": "https://www.newyorker.com/magazine/2019/07/08/the-lingering-of-loss",
+		"keywords": ["Friendship", "death", "laptop", "will", "haircuts", "Y2K", "MacIntosh", "Microsoft Word", "Jane", "graduate school"]
+	},
+	"article19": {
+		"url": "https://popula.com/2019/05/02/what-if-you-are-a-fucking-bitch/",
+		"keywords": ["Friendship", "bitch", "fucking bitch", "social interaction", "bullying", "freelance job", "apologies", "stalking", "vulnerability", "forgiveness"]
+	},
+	"article20": {
+		"url": "https://popula.com/2019/04/02/heaven-or-high-water/",
+		"keywords": ["Miami", "flooding", "sea level", "Sunset Harbour", "real estate", "lying", "possibly Swiss", "hurricanes", "small business", "property"]
+	},
+	"article21": {
+		"url": "https://ryanholiday.net/texas-forever-how-i-found-the-american-dream-in-the-lone-star-state/",
+		"keywords": ["Texas", "American Dream", "girlfriend", "ranch life", "real estate", "state income tax", "natural beauty", "Friday night lights", "chicken fried stake", "property"]
+	},
+	"article22": {
+		"url": "https://humanparts.medium.com/the-case-for-being-a-multi-hyphenate-216e2e19a30d",
+		"keywords": ["Multi-hyphenate", "job prospects", "expertise", "Stoics", "Benjamin Franklin", "airline pilot", "author", "wisdom", "specialists", "freaks"]
+	},
+	"article23": {
+		"url": "https://www.theatlantic.com/business/archive/2011/11/learning-about-work-ethic-from-my-high-school-driving-instructor/248339/",
+		"keywords": ["driving lessons", "New Jersey", "safe driving", "Bob", "DMV", "Practical test", "New Jersey Devils", "care", "work ethic", "airline pilot"]
+	},
+	"article24": {
+		"url": "https://www.wired.com/story/opinion-data-brokers-are-cruising-for-a-bruising/",
+		"keywords": ["data brokers", "hackers", "social media handles", "data records", "courts", "market analytics", "cybercrime", "Equifax", "Accountability", "regulations"]
+	},
+	"article25": {
+		"url": "https://fs.blog/2019/12/survivorship-bias/",
+		"keywords": ["survivorship bias", "failure", "success", "Cicero", "roulette", "cognitive shortcut", "The Beatles", "base rates", "cause and effect", "hindsight"]
+	},
+	"article26": {
+		"url": "https://themargins.substack.com/p/welcome-back-san-francisco",
+		"keywords": ["San Francisco", "Yahoo", "Turkish ears", "CEOs", "Digg", "Silicon Valley", "alt-right", "Google", "Trump", "human ATM"]
+	},
+	"article27": {
+		"url": "https://hurryslowly.co/priya-parker/",
+		"keywords": ["Priya Parker", "The Art of Gathering", "gathering", "purpose", "generous authority", "vulnerability", "guests", "invisible structure", "expertise", "roles"]
+	},
+	"article28": {
+		"url": "https://www.lrb.co.uk/the-paper/v41/n04/patricia-lockwood/the-communal-mind",
+		"keywords": ["Patricia Lockwood", "Singularity", "newsfeed", "diary", "addiction", "MySpace", "online communities", "security robot", "Jane Austen", "timelines"]
+	},
+	"article29": {
+		"url": "https://www.mindful.org/are-you-addicted-to-doing/",
+		"keywords": ["busyness", "mindfulness", "weekend", "addiction", "dopamine", "Facebook", "purpose", "Dalai Lama", "modern society", "career"]
+	},
+	"article30": {
+		"url": "https://www.youtube.com/watch?v=0g7ARarFNnw",
+		"keywords": ["vocation", "hobby", "career", "creative life", "curiosity", "fear", "entrepreneur", "reflection", "procrastination", "new job"]
 	}
+
+
 }

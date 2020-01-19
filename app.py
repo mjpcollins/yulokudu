@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify
-import json
 
 from utils.map_algos import UserMap
 from utils.t import load_json, format_mapping_dicts
 
 app = Flask(__name__)
 
-
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
+
+    print(request)
 
     current_article = dict(request.args)
 

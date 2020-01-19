@@ -10,6 +10,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
 
+    print(request)
+
     current_article = dict(request.values)
     print(current_article)
 

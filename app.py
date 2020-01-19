@@ -10,17 +10,13 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def parse_request():
 
+    # TODO: Place inside a function
     print("Request received: {r}".format(r=request))
-
     current_article = dict(request.args)
-
     print("Pre process current_article: {c}".format(c=current_article))
-
     print(current_article)
-
     if "jumpdist" not in current_article:
         current_article["jumpdist"] = [0.5]
-
     # Standardise format
     for k in current_article:
         if isinstance(current_article[k], str):
